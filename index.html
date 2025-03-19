@@ -14,7 +14,7 @@
 
     <!-- Navigation Menu -->
     <ul>
-        <li><a class="active" href="home.html">Home</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
         <li><a href="mywork.html">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
@@ -74,10 +74,37 @@
             </aside>
         </div>
 
+        <button id="scrollToTopBtn" onclick="scrollToTop()">↑ Top</button>
+
         <!-- Footer of the website -->
         <footer>
             <p>&copy; 2025 Design FTK. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        // Show a greeting message when the page loads
+        window.onload = function() {
+            alert("Welcome to Design FTK! We're glad you're here.");
+        };
+        
+        // Get the button
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    
 </body>
 </html>

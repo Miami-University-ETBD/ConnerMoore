@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>Design FTK</title>
+
+    <script>
+        $(document).ready(function(){
+          $("#p1").hover(function(){
+            alert("You entered p1!");
+          },
+          function(){
+            alert("Secret 20% off cupon, code 'SECRET'");
+          }); 
+        });
+
+        $(document).ready(function(){
+  $("#p2").dblclick(function(){
+    $(this).hide();
+  });
+});
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });
+});
+        </script>
+</head>
+<body>
+    <!-- Header of the website -->
+    <header>
+        <h1>Portfolio</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="mywork.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+
+    <div class="container">
+        <!-- Main content area with Flexbox layout -->
+        <div class="main-content">
+            <!-- Section for Design FTK introduction -->
+            <section>
+                <h2>Design FTK</h2>
+                <p><strong>Design FTK (For The Kingdom)</strong> is more than just a brand—it's a creative mission to spread faith through meaningful designs. Every piece we create is rooted in a purpose: to glorify God and inspire conversations about Him.</p>
+                <p>Our designs are crafted to be <em>bold, expressive, and impactful</em>, offering a fresh way for believers to wear their faith with confidence. Whether it’s a hoodie featuring scripture or a minimalist tee that sparks curiosity, each design carries a deeper message.</p>
+
+                <h2>Featured Designs</h2>
+                <p>Each design we release is a reflection of biblical truth, faith, and creativity. Some of our bestsellers include:</p>
+                <ul>
+                    <li><strong>Graves into Gardens</strong> – A powerful reminder of transformation through Christ.</li>
+                    <li><em>Kingdom Minded</em> – A design focused on renewing the mind in alignment with God’s will.</li>
+                    <li>Love Thy Neighbor – A tribute to the greatest commandment in action.</li>
+                </ul>
+
+                <h3>Design Details</h3>
+                <table>
+                    <tr>
+                        <th>Design Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Link</th>
+                    </tr>
+                    <tr>
+                        <td>Graves into Gardens</td>
+                        <td>A powerful reminder of transformation through Christ.</td>
+                        <td>$30.00</td>
+                        <td><a href="https://www.instagram.com/p/DEoMId_tANS/?img_index=1" target="_blank">View Design</a></td>
+                    </tr>
+                    <tr>
+                        <td>Kingdom Minded</td>
+                        <td>A design focused on renewing the mind in alignment with God’s will.</td>
+                        <td>$25.00</td>
+                        <td><a href="https://www.instagram.com/p/DFnWFW_Ri8W/?img_index=1" target="_blank">View Design</a></td>
+                    </tr>
+                    <tr>
+                        <td>Love Thy Neighbor</td>
+                        <td>A tribute to the greatest commandment in action.</td>
+                        <td>$20.00</td>
+                        <td><a href="https://www.instagram.com/p/DGPA91QNbDA/?img_index=1" target="_blank">View Design</a></td>
+                    </tr>
+                </table>
+            </section>
+
+            <button id="scrollToTopBtn" onclick="scrollToTop()">↑ Top</button>
+
+            <!-- Aside for additional information -->
+            <aside>
+                <h2>Join the Movement</h2>
+                <p>Follow us on Instagram @design.ftk to stay updated on new releases and be part of our growing community of faith-driven creatives.</p>
+                <h2><u>Contact Us</u></h2>
+                <p><i>Email:</i> support@designftk.com</p>
+                <p><i>Instagram:</i> @design.ftk</p>
+
+                <p id="p1">HOVER OVER THIS</p>
+                <p id="p2">If you double-click on me, I will disappear.</p>
+
+                <button>Click to fade in boxes</button><br><br>
+
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+            </aside>
+
+        </div>
+
+        <!-- Footer of the website -->
+        <footer>
+            <p>&copy; 2025 Design FTK. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    
+</body>
+</html>

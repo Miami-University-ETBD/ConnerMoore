@@ -5,6 +5,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Design FTK</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
    <style>
        body {
            background-color: #f0f4f7;
@@ -126,13 +128,118 @@
     </div>
   </div>
 
+  <div class="carousel">
+    <a class="carousel-item" href="#one!"><img src="https://i.etsystatic.com/37907350/r/il/2da914/5698310128/il_fullxfull.5698310128_psda.jpg"></a>
+    <a class="carousel-item" href="#two!"><img src="https://i.etsystatic.com/35438380/r/il/6a714f/5288025421/il_570xN.5288025421_q1yo.jpg"></a>
+    <a class="carousel-item" href="#three!"><img src="https://i.etsystatic.com/37907350/r/il/598ba8/5689135700/il_fullxfull.5689135700_nt3f.jpg"></a>
+    <a class="carousel-item" href="#four!"><img src="https://i.etsystatic.com/39676936/c/2000/2000/545/0/il/62410b/4900250041/il_300x300.4900250041_7xl3.jpg"></a>
+    <a class="carousel-item" href="#five!"><img src="https://i.etsystatic.com/26426982/r/il/2d3b7f/3782120433/il_570xN.3782120433_5f3d.jpg"></a>
+  </div>
+
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Shirt 1</div>
+      <div class="collapsible-body"><span>Shirt 1 is grey</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Shirt 2</div>
+      <div class="collapsible-body"><span>Shirt 2 is white</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Shirt 3</div>
+      <div class="collapsible-body"><span>Shirt 3 is blue</span></div>
+    </li>
+  </ul>
+
    <!-- Materialize JS -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    <script>
+
+    
        document.addEventListener('DOMContentLoaded', function() {
            var elems = document.querySelectorAll('.materialboxed');
            var instances = M.Materialbox.init(elems);
        });
+
+       document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.carousel');
+  var instances = M.Carousel.init(elems);
+});
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.carousel').carousel();
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems); // removed options
+});
+
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+
+  // Initialize modal
+  document.addEventListener('DOMContentLoaded', function() {
+           var elems = document.querySelectorAll('.modal');
+           var instances = M.Modal.init(elems);
+       });
+
+
+       // Function to display selected pastry
+       function displayPastry() {
+           const selectedPastry = document.querySelector('input[name="pastry"]:checked').value;
+           document.getElementById('pastry-response').innerText = `You selected: ${selectedPastry}`;
+       }
+       // Function to handle email subscription form submission
+       function submitEmail(event) {
+           event.preventDefault();
+           const email = document.getElementById('email').value;
+           document.getElementById('email-response').innerText = `Thank you for subscribing! Updates will be sent to: ${email}`;
+           document.getElementById('email').value = ''; // Clear the input
+
+
+           // Display modal
+           const modalText = document.getElementById('modal-content-text');
+           modalText.innerText = `Thank you for subscribing! Updates will be sent to: ${email}`;
+           const modal = M.Modal.getInstance(document.getElementById('modal1'));
+           modal.open();
+       }
+
+
    </script>
+
+<div id="radio-section" class="section container">
+    <h2>Select Your Favorite Shirt</h2>
+    <form>
+        <p>
+            <label>
+                <input name="pastry" type="radio" value="Grey" onclick="displayPastry()"/>
+                <span>Grey</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="pastry" type="radio" value="White" onclick="displayPastry()"/>
+                <span>White</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="pastry" type="radio" value="Blue" onclick="displayPastry()"/>
+                <span>Blue</span>
+            </label>
+        </p>
+    </form>
+    <div id="pastry-response"></div>
+</div>
+
 </body>
 </html>
